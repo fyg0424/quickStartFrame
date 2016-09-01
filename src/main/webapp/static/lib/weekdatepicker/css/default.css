@@ -1,0 +1,12 @@
+@CHARSET "UTF-8";
+
+.digitspan {
+    text-align: center;
+    width: 20px;
+    background-color: rgb(173, 255, 47);    /*chooseRgb*/
+    background-color: greenyellow;          /*chooseColor*/
+    /*unChooseColor:#eee*/
+    display: block;
+    cursor: pointer;
+    font-weight: bolder;
+}

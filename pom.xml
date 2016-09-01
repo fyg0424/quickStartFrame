@@ -1,0 +1,438 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>com.project</groupId>
+	<version>1.0-SNAPSHOT</version>
+	<packaging>war</packaging>
+
+
+	<name>QuickStartFrame</name>
+	<url>http://www.shijie99.com</url>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+
+		<org.springframework-version>4.2.6.RELEASE</org.springframework-version>
+		
+		<mybatis-version>3.2.6</mybatis-version>
+		<mybatis-spring-version>1.2.1</mybatis-spring-version>
+		<mybatis-pagehelper.version>4.1.3</mybatis-pagehelper.version>
+		
+		<org.aspectj-version>1.6.10</org.aspectj-version>
+		<aspectjweaver-version>1.8.0</aspectjweaver-version>
+		<cglib-version>3.1</cglib-version>
+		
+		<org.slf4j-version>1.6.6</org.slf4j-version>
+		<log4j-version>1.2.15</log4j-version>
+		
+		<joda-time-version>2.8.1</joda-time-version>
+		
+		<commons-dbcp2-version>2.1.1</commons-dbcp2-version>
+		<commons-lang3-version>3.4</commons-lang3-version>
+		<commons-codec-version>1.10</commons-codec-version>
+	    <commons-fileupload-version>1.3.1</commons-fileupload-version>
+	    <commons-io-version>2.4</commons-io-version>
+		<commons-pool-version>1.6</commons-pool-version>
+		
+		<geronimo-jta-1-1-spec-version>1.1.1</geronimo-jta-1-1-spec-version>
+		
+		<quartz-version>2.2.1</quartz-version>
+		
+		<fastjson.verion>1.2.12</fastjson.verion>
+		
+		<joda-time-version>2.8.1</joda-time-version>
+		
+		<poi-version>3.12</poi-version>
+		<poi-ooxml-version>3.12</poi-ooxml-version>
+		<poi-ooxml-schemas-version>3.12</poi-ooxml-schemas-version>
+		
+		<!-- <jackson-jaxrs-xml-provider-version>2.4.1</jackson-jaxrs-xml-provider-version> -->
+		
+		<mysql-connector.version>5.1.35</mysql-connector.version>
+		
+		<!-- provided -->
+		<javax.servlet-api-version>3.1.0</javax.servlet-api-version>
+		<jsp-api-version>2.2</jsp-api-version>
+		<jstl-version>1.2</jstl-version>
+		
+		<memcached-java-client-version>3.0.2</memcached-java-client-version>
+		
+		<!-- test -->
+		<junit-version>4.7</junit-version>
+		
+		<!--权限系统配置>>>>>>>>>>> -->
+		<permission-client.version>1.4.3</permission-client.version>
+		<shiro.version>1.2.4</shiro.version>
+		<httpclient.version>4.5.2</httpclient.version>
+		<org.springframework-version>4.2.6.RELEASE</org.springframework-version>
+		<!--权限系统配置<<<<<<<<<<<<<<<<<<< -->
+	</properties>
+
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-framework-bom</artifactId>
+				<version>${org.springframework-version}</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
+	
+	<dependencies>
+		<!-- Spring framework -->
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-context</artifactId>
+			<exclusions>
+				<!-- Exclude Commons Logging in favor of SLF4j -->
+				<exclusion>
+					<groupId>commons-logging</groupId>
+					<artifactId>commons-logging</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-webmvc</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-orm</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-jdbc</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-aspects</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-context-support</artifactId>
+		</dependency>
+		
+		<!-- CGLib -->
+		<dependency>
+			<groupId>cglib</groupId>
+			<artifactId>cglib</artifactId>
+			<version>${cglib-version}</version>
+		</dependency>
+		
+		<!-- AspectJ -->
+		<dependency>
+			<groupId>org.aspectj</groupId>
+			<artifactId>aspectjrt</artifactId>
+			<version>${org.aspectj-version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.aspectj</groupId>
+			<artifactId>aspectjweaver</artifactId>
+			<version>${aspectjweaver-version}</version>
+		</dependency>
+		
+		<!-- Servlet -->
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>javax.servlet-api</artifactId>
+			<version>${javax.servlet-api-version}</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>javax.servlet.jsp</groupId>
+			<artifactId>jsp-api</artifactId>
+			<version>${jsp-api-version}</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>jstl</artifactId>
+			<version>${jstl-version}</version>
+		</dependency>
+
+		<!-- Logging -->
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-api</artifactId>
+			<version>${org.slf4j-version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>jcl-over-slf4j</artifactId>
+			<version>${org.slf4j-version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-log4j12</artifactId>
+			<version>${org.slf4j-version}</version>
+		</dependency>
+		<dependency>
+			<groupId>log4j</groupId>
+			<artifactId>log4j</artifactId>
+			<version>${log4j-version}</version>
+			<exclusions>
+				<exclusion>
+					<groupId>javax.jms</groupId>
+					<artifactId>jms</artifactId>
+				</exclusion>
+				<exclusion>
+					<groupId>com.sun.jdmk</groupId>
+					<artifactId>jmxtools</artifactId>
+				</exclusion>
+				<exclusion>
+					<groupId>com.sun.jmx</groupId>
+					<artifactId>jmxri</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+		
+		<!-- Mybatis -->
+		<dependency>
+			<groupId>org.mybatis</groupId>
+			<artifactId>mybatis</artifactId>
+			<version>${mybatis-version}</version>
+		</dependency>
+		
+		<!-- Mybatis-Spring -->
+		<dependency>
+			<groupId>org.mybatis</groupId>
+			<artifactId>mybatis-spring</artifactId>
+			<version>${mybatis-spring-version}</version>
+		</dependency>
+		
+		<!-- mybatis分页 -->
+		<dependency>
+		    <groupId>com.github.pagehelper</groupId>
+		    <artifactId>pagehelper</artifactId>
+		    <version>${mybatis-pagehelper.version}</version>
+		</dependency>
+		
+		<!-- Mysql驱动，使用JNDI，去掉 -->
+		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+ 			<version>${mysql-connector.version}</version>
+ 		</dependency>
+ 		 
+  		<dependency>
+  			<groupId>org.apache.geronimo.specs</groupId>
+  			<artifactId>geronimo-jta_1.1_spec</artifactId>
+  			<version>${geronimo-jta-1-1-spec-version}</version>
+  		</dependency>
+
+		<!-- Quartz -->
+		<dependency>
+			<groupId>org.quartz-scheduler</groupId>
+			<artifactId>quartz</artifactId>
+			<version>${quartz-version}</version>
+		</dependency>
+		
+		<!-- fastJson解析 -->
+		<dependency>
+			<groupId>com.alibaba</groupId>
+			<artifactId>fastjson</artifactId>
+			<version>${fastjson.verion}</version>
+		</dependency>
+		
+		<dependency>
+			<groupId>joda-time</groupId>
+			<artifactId>joda-time</artifactId>
+			<version>${joda-time-version}</version>
+		</dependency>
+		
+		<!-- commons -->
+		<dependency>
+  			<groupId>org.apache.commons</groupId>
+  			<artifactId>commons-dbcp2</artifactId>
+  			<version>${commons-dbcp2-version}</version>
+  		</dependency>
+  		
+		<dependency>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>commons-lang3</artifactId>
+			<version>${commons-lang3-version}</version>
+		</dependency>
+		
+	    <dependency>
+			<groupId>commons-codec</groupId>
+			<artifactId>commons-codec</artifactId>
+			<version>${commons-codec-version}</version>
+		</dependency>
+		
+		<dependency>
+			<groupId>commons-fileupload</groupId>
+			<artifactId>commons-fileupload</artifactId>
+			<version>${commons-fileupload-version}</version>
+		</dependency>
+		
+		<dependency>
+			<groupId>commons-io</groupId>
+			<artifactId>commons-io</artifactId>
+			<version>${commons-io-version}</version>
+		</dependency>
+		
+		<dependency>
+			<groupId>commons-pool</groupId>
+			<artifactId>commons-pool</artifactId>
+			<version>${commons-pool-version}</version>
+		</dependency>
+		
+		<!-- POI依赖 -->
+		<dependency>
+			<groupId>org.apache.poi</groupId>
+			<artifactId>poi</artifactId>
+			<version>${poi-version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.poi</groupId>
+			<artifactId>poi-ooxml</artifactId>
+			<version>${poi-ooxml-version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.poi</groupId>
+			<artifactId>poi-ooxml-schemas</artifactId>
+			<version>${poi-ooxml-schemas-version}</version>
+		</dependency>
+		
+		<!-- jackson -->
+		<!--
+		<dependency>
+			<groupId>com.fasterxml.jackson.jaxrs</groupId>
+			<artifactId>jackson-jaxrs-xml-provider</artifactId>
+			<version>${jackson-jaxrs-xml-provider-version}</version>
+		</dependency>
+		-->
+		
+		<!-- memcached -->
+		<dependency>
+			<groupId>com.whalin</groupId>
+			<artifactId>Memcached-Java-Client</artifactId>
+			<version>${memcached-java-client-version}</version>
+		</dependency>
+		
+		<!-- JUnit 测试 -->
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>${junit-version}</version>
+			<scope>test</scope>
+		</dependency>
+		
+		
+		<!-- shiro -->
+		<dependency>
+			<groupId>org.apache.shiro</groupId>
+			<artifactId>shiro-core</artifactId>
+			<version>${shiro.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.shiro</groupId>
+			<artifactId>shiro-ehcache</artifactId>
+			<version>${shiro.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.shiro</groupId>
+			<artifactId>shiro-web</artifactId>
+			<version>${shiro.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.shiro</groupId>
+			<artifactId>shiro-quartz</artifactId>
+			<version>${shiro.version}</version>
+			<exclusions>
+				<exclusion>
+					<groupId>org.opensymphony.quartz</groupId>
+					<artifactId>quartz</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.shiro</groupId>
+			<artifactId>shiro-spring</artifactId>
+			<version>${shiro.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.apache.httpcomponents</groupId>
+			<artifactId>httpclient</artifactId>
+			<version>${httpclient.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>net.sf.json-lib</groupId>
+			<artifactId>json-lib</artifactId>
+			<version>2.4</version>
+			<classifier>jdk15</classifier>
+		</dependency>
+		
+		<!-- ajax json 相关 -->
+		<dependency>
+			<groupId>com.google.code.gson</groupId>
+			<artifactId>gson</artifactId>
+			<version>2.3.1</version>
+		</dependency>
+		<dependency>
+			<groupId>org.codehaus.jackson</groupId>
+			<artifactId>jackson-core-asl</artifactId>
+			<version>1.9.13</version>
+		</dependency>
+		<dependency>
+			<groupId>org.codehaus.jackson</groupId>
+			<artifactId>jackson-mapper-asl</artifactId>
+			<version>1.9.12</version>
+		</dependency>
+		<dependency>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-databind</artifactId>
+			<version>2.2.3</version>
+		</dependency>
+		
+		<dependency>
+			<groupId>com.shijie99</groupId>
+			<artifactId>permission-client</artifactId>
+			<version>${permission-client.version}</version>
+		</dependency>
+		
+	</dependencies>
+	<repositories>
+		<repository>
+			<id>local_central</id>
+			<name>your custom repo</name>
+			<url>http://111.160.221.66:18081/nexus/content/groups/public/</url>
+		</repository>
+	</repositories>
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.mybatis.generator</groupId>
+				<artifactId>mybatis-generator-maven-plugin</artifactId>
+				<version>1.3.2</version>
+				<configuration>
+					<verbose>true</verbose>
+					<overwrite>true</overwrite>
+				</configuration>
+			</plugin>
+			
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>2.3.2</version>
+				<configuration>
+					<source>1.7</source>
+					<target>1.7</target>
+				</configuration>
+			</plugin>
+			
+			<!-- 用于制作archetype的 -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-archetype-plugin</artifactId>
+				<version>2.4</version>
+			</plugin>
+		</plugins>
+	</build>
+	<artifactId>QuickStartFrame</artifactId>
+</project>

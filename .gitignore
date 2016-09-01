@@ -1,5 +1,6 @@
-# Compiled
-*.elc
-
-# Packaging
-.cask
+/.settings/
+/target/
+.classpath
+.project
+.tern-project
+.mymetadata
