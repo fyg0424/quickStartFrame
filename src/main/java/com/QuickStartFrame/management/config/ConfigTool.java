@@ -11,5 +11,6 @@ public class ConfigTool implements InitializingBean{
 
 	@Override
 	public void afterPropertiesSet() throws Exception {
+		System.err.println("Bean初始化完成");
 	}
 }
