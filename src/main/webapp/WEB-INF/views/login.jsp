@@ -8,7 +8,7 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	<%@ include file="common/btcss.jsp" %>
 	
-	<title>世界玖玖--供应商管理系统</title>
+	<title>DEMO</title>
 
 	<link rel="stylesheet" href="${ctx }/static/css/login.css">
 
@@ -19,7 +19,7 @@
 		<div class="login-box">
 			<div class="login-title text-center">
 				<h1>
-					<small>世界玖玖供应商管理系统登录</small>
+					<small>DEMO</small>
 				</h1>
 			</div>
 			<div class="login-content ">

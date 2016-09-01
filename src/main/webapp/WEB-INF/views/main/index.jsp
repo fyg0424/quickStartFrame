@@ -11,14 +11,14 @@
 	<link href="${ctx}/static/css/menu.css" rel="stylesheet">
 	<link href="${ctx}/static/lib/layout/1.4.0/css/layout-default-latest.css" rel="stylesheet">
 	
-	<title>世界玖玖--供应商管理系统</title>
+	<title>DEMO</title>
 </head>
 <body>
 	<div class="ui-layout-north">
         <nav class="navbar navbar-default">
             <div class="container-fluid">
                 <div class="navbar-header">
-                    <a class="navbar-brand" href="#"><span style="font-weight:bolder;">世界玖玖--供应商管理系统</span>
+                    <a class="navbar-brand" href="#"><span style="font-weight:bolder;">DEMO</span>
                     </a>
                 </div>
                 <div class="collapse navbar-collapse" style="margin-right: 40px;">
@@ -52,7 +52,7 @@
 
 
     <div class="ui-layout-center" style="top:60px;">
-        <iframe name="main" frameborder="no" border="0"
+        <iframe name="main" 
                 style="height: 100%; width: 100%; border: 0px solid"
                 src="${ctx }/main/welcome"></iframe>
     </div>
