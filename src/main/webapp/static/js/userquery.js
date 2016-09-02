@@ -22,6 +22,8 @@ function initDataTable() {
 				d.querytype = $('#querytype').val();
 			}
 		},
+		"processing" : true,
+		"serverSide" : true,
 		"ordering": false,
 		"aLengthMenu": [5, 10, 20, 40 ],
 		"iDisplayLength" : 10,

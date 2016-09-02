@@ -40,13 +40,13 @@
 	
 	<!-- 此Bean中的属性需要在config.property进行配置 -->
 	<bean id="configTool" class="com.QuickStartFrame.management.config.ConfigTool">
-	    <property name="mailUsername" value="${mail.username}" />
+	    <!-- <property name="mailUsername" value="${mail.username}" />
 		<property name="mailPassword" value="${mail.pwd}" />
 		<property name="mailServerHost" value="${mail.serverhost}" />
 		<property name="mailServerPort" value="${mail.serverport}" />
 		<property name="mailTo" value="${mail.toaddress}" />
 		<property name="mailFrom" value="${mail.username}" />
 		<property name="mailCC" value="${mail.ccaddress}" />
-		<property name="mailSubject" value="${mail.subject}" />
+		<property name="mailSubject" value="${mail.subject}" /> -->
 	</bean>
 </beans>

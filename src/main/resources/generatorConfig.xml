@@ -75,7 +75,7 @@
             <!-- <property name="rootInterface" value=""/> -->
         </javaClientGenerator>
 
-        <table tableName="account_code_log" schema="AccountCodeLog">
+        <table tableName="user" schema="User">
             <generatedKey column="id" sqlStatement="JDBC"/>
         </table>
     </context>
