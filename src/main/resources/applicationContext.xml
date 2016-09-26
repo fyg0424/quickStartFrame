@@ -33,6 +33,7 @@
     
 	<!-- JBOSS加载standalone/config.properties文件方式 -->
 	<!-- <context:property-placeholder location="file:${user.dir}/../standalone/config.properties"/> -->
+	<!--freemarkCofig支持跳转HTML页面  -->
 	<bean id="freemarkerConfig"
       class="org.springframework.web.servlet.view.freemarker.FreeMarkerConfigurer">
    		<property name="templateLoaderPath" value="/WEB-INF/views/" />

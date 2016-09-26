@@ -38,7 +38,7 @@
 		<property name="sqlSessionFactoryBeanName" value="sqlSessionFactory" />
 	</bean>
 	
-	<!-- 此Bean中的属性需要在config.property进行配置 -->
+	<!-- 此Bean中的属性需要在config.property进行初始化配置 -->
 	<bean id="configTool" class="com.QuickStartFrame.management.config.ConfigTool">
 	    <!-- <property name="mailUsername" value="${mail.username}" />
 		<property name="mailPassword" value="${mail.pwd}" />
