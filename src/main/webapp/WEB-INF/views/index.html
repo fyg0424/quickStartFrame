@@ -153,39 +153,39 @@
             <div class="collapse navbar-collapse navbar-ex1-collapse">
                 <ul class="nav navbar-nav side-nav">
                     <li class="active">
-                        <a href="index.html"><i class="fa fa-fw fa-dashboard"></i> Dashboard</a>
+                        <a href="main/index" target="main"><i class="fa fa-fw fa-dashboard"></i> Dashboard</a>
                     </li>
                     <li>
-                        <a href="charts.html"><i class="fa fa-fw fa-bar-chart-o"></i> Charts</a>
+                        <a href="charts.html" target="main"><i class="fa fa-fw fa-bar-chart-o"></i> Charts</a>
                     </li>
                     <li>
-                        <a href="tables.html"><i class="fa fa-fw fa-table"></i> Tables</a>
+                        <a href="tables.html" target="main"><i class="fa fa-fw fa-table"></i> Tables</a>
                     </li>
                     <li>
-                        <a href="forms.html"><i class="fa fa-fw fa-edit"></i> Forms</a>
+                        <a href="forms.html" target="main"><i class="fa fa-fw fa-edit"></i> Forms</a>
                     </li>
                     <li>
-                        <a href="bootstrap-elements.html"><i class="fa fa-fw fa-desktop"></i> Bootstrap Elements</a>
+                        <a href="bootstrap-elements.html" target="main"><i class="fa fa-fw fa-desktop"></i> Bootstrap Elements</a>
                     </li>
                     <li>
-                        <a href="bootstrap-grid.html"><i class="fa fa-fw fa-wrench"></i> Bootstrap Grid</a>
+                        <a href="bootstrap-grid.html" target="main"><i class="fa fa-fw fa-wrench"></i> Bootstrap Grid</a>
                     </li>
                     <li>
                         <a href="javascript:;" data-toggle="collapse" data-target="#demo"><i class="fa fa-fw fa-arrows-v"></i> Dropdown <i class="fa fa-fw fa-caret-down"></i></a>
                         <ul id="demo" class="collapse">
                             <li>
-                                <a href="#">Dropdown Item</a>
+                                <a href="#" target="main">Dropdown Item</a>
                             </li>
                             <li>
-                                <a href="#">Dropdown Item</a>
+                                <a href="#" target="main">Dropdown Item</a>
                             </li>
                         </ul>
                     </li>
                     <li>
-                        <a href="blank-page.html"><i class="fa fa-fw fa-file"></i> Blank Page</a>
+                        <a href="blank-page.html" target="main"><i class="fa fa-fw fa-file"></i> Blank Page</a>
                     </li>
                     <li>
-                        <a href="index-rtl.html"><i class="fa fa-fw fa-dashboard"></i> RTL Dashboard</a>
+                        <a href="index-rtl.html" target="main"><i class="fa fa-fw fa-dashboard"></i> RTL Dashboard</a>
                     </li>
                     <li>
                         <a href="Upload/uploadFilePage" target="main"><i class="fa fa-fw fa-dashboard"></i> Upload Flie</a>
@@ -200,10 +200,9 @@
             <div class="container-fluid">
 
                 <!-- Page Heading -->
-                <div class="ui-layout-center" style="top:60px;">
-       				 <iframe name="main" frameborder="no" border="0"
-               			 style="height: 100%; width: 100%; border: 0px solid">
-               		</iframe>
+                <div class="ui-layout-center">
+                    <iframe id="myiframe" name="main" scrolling="auto" width="100%" frameborder="0">
+                    </iframe>
    				 </div>
 
             </div>
@@ -220,6 +219,8 @@
 
     <!-- Bootstrap Core JavaScript -->
     <script src="static/js/bootstrap.min.js"></script>
+    <!-- iframe -->
+    <script src="static/js/index.js"></script>
 
     <!-- Morris Charts JavaScript -->
     <script src="static/js/plugins/morris/raphael.min.js"></script>

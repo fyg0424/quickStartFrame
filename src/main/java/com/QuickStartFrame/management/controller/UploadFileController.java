@@ -22,7 +22,6 @@ public class UploadFileController {
 	
 	@RequestMapping(value = {"upload.html","uploadFilePage"}, method = RequestMethod.GET)
 	public String UploadFilePage(){
-		System.err.println("跳转页面");
 		return "upload";
 	}
 	
@@ -49,10 +48,14 @@ public class UploadFileController {
                 //一次遍历所有文件
                 MultipartFile file=multiRequest.getFile(iter.next().toString());
                 if(file!=null)
-                {
-                    String path="E:/springUpload"+file.getOriginalFilename();
+                {   long time = System.currentTimeMillis();
+                    String path="E:/springUpload/"+time+file.getOriginalFilename();
+                    File saveFile = new File(path);
+                    if(!saveFile.getParentFile().exists()){
+                    	saveFile.getParentFile().mkdirs();
+                    }
                     //上传
-                    file.transferTo(new File(path));
+                    file.transferTo(saveFile);
                 }
                  
             }
@@ -60,7 +63,7 @@ public class UploadFileController {
         }
         long  endTime=System.currentTimeMillis();
         System.out.println("方法三的运行时间："+String.valueOf(endTime-startTime)+"ms");
-    return ""; 
+    return "index"; 
     }
 
 }

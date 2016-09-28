@@ -11,7 +11,7 @@ public class MainController {
 	
 	@RequestMapping(value = "/index", method = RequestMethod.GET)
 	public String index() {
-		return "main/index";
+		return "charts";
 	}
 	
 	@RequestMapping(value = "/welcome", method = RequestMethod.GET)
