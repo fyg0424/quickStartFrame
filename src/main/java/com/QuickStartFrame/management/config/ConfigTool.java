@@ -11,6 +11,8 @@ public class ConfigTool implements InitializingBean{
 	
 	@Override
 	public void afterPropertiesSet() throws Exception {
+		//此处可以添加服务器启动时执行的任务
 		logger.info("bean初始化完成");
+		
 	}
 }
