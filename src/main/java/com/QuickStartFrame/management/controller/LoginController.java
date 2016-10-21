@@ -27,7 +27,7 @@ public class LoginController {
 	@ResponseBody
 	@RequestMapping(value = "/login.ajax", method = RequestMethod.POST)
 	public Object Login(String loginName,String password,HttpServletRequest request, HttpServletResponse response){
-		logger.info("MD5密码："+password);
+		//logger.info("MD5密码："+password);
 		JSONObject result = new JSONObject();
 		User user = userService.queryUserByLoginName(loginName);
 		if(user != null){
@@ -58,10 +58,10 @@ public class LoginController {
 	public String login(HttpServletRequest request, HttpServletResponse response) {
 		User user = (User)request.getSession().getAttribute(Constant.SESSION_USER);
 		if(user != null) {
-			logger.info("跳转首页");
+			//logger.info("跳转首页");
 			return INDEX_PAGE;
 		} 
-		logger.info("跳转登录页面");
+		//logger.info("跳转登录页面");
 		return LOGIN_PAGE;
 	}
 	
