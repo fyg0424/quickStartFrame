@@ -59,6 +59,7 @@ public class LoginController {
 		User user = (User)request.getSession().getAttribute(Constant.SESSION_USER);
 		if(user != null) {
 			//logger.info("跳转首页");
+			logger.info("欢迎使用我的系统 ");
 			return INDEX_PAGE;
 		} 
 		//logger.info("跳转登录页面");
