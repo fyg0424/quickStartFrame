@@ -28,6 +28,7 @@ public class LoginController {
 	@RequestMapping(value = "/login.ajax", method = RequestMethod.POST)
 	public Object Login(String loginName,String password,HttpServletRequest request, HttpServletResponse response){
 		logger.info("MD5密码："+password);
+		logger.info("验证用户信息");
 		JSONObject result = new JSONObject();
 		User user = userService.queryUserByLoginName(loginName);
 		if(user != null){
