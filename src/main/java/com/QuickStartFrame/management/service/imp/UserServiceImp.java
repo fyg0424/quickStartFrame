@@ -18,6 +18,7 @@ public class UserServiceImp implements UserService {
 
 	@Override
 	public User CheckUser(User user) {
+		//intellJ提交代码
 		UserExample uexample = new UserExample();
 		uexample.createCriteria().andLoginnameEqualTo(user.getLoginname())
 		.andPasswordEqualTo(user.getPassword());
